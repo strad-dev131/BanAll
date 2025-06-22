@@ -39,6 +39,3 @@
 2025-06-22 13:43:59,357 - pyrogram.session.session - INFO - PingTask started
 2025-06-22 13:43:59,629 - pyrogram.dispatcher - INFO - Started 12 HandlerTasks
 2025-06-22 13:43:59,630 - __main__ - INFO - 🚀 Bot is now online and listening for commands!
-2025-06-22 13:44:24,829 - handlers.utils - ERROR - ❌ Unexpected error in flood wait handler: Telegram says: [400 USER_ADMIN_INVALID] - The action requires admin privileges. Probably you tried to edit admin privileges on someone you don't have rights to (caused by "channels.EditBanned")
-2025-06-22 13:44:24,830 - handlers.ban - WARNING - ⚠️ Failed to ban 7768779336: Telegram says: [400 USER_ADMIN_INVALID] - The action requires admin privileges. Probably you tried to edit admin privileges on someone you don't have rights to (caused by "channels.EditBanned")
-2025-06-22 13:44:25,540 - handlers.utils - ERROR - ❌ Failed to send log to log group: Peer id invalid: -1002715747653
