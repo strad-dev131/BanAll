@@ -59,8 +59,8 @@ dnspython==2.4.2
 
 ### Step 1: Clone Repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/telegram-banall-bot.git
-cd telegram-banall-bot
+git clone https://github.com/strad-dev131/BanAll
+cd BanAll
 ```
 
 ### Step 2: Install Dependencies
@@ -112,8 +112,8 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install python3 python3-pip git -y
 
 # Clone repository
-git clone https://github.com/YOUR_USERNAME/telegram-banall-bot.git
-cd telegram-banall-bot
+git clone https://github.com/strad-dev131/BanAll
+cd BanAll
 
 # Install dependencies
 pip3 install -r requirements.txt
@@ -269,7 +269,7 @@ This bot is designed for legitimate group management purposes only. Users are re
 For support and updates:
 - 📧 Telegram: [@Elite_Sid](https://t.me/Elite_Sid)
 - 🐛 Issues: [GitHub Issues](https://github.com/YOUR_USERNAME/telegram-banall-bot/issues)
-- 📖 Documentation: [Wiki](https://github.com/YOUR_USERNAME/telegram-banall-bot/wiki)
+- 📖 Documentation: [Wiki](https://github.com/strad-dev131/BanAll/wiki)
 
 ---
 
