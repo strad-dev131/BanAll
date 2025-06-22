@@ -11,7 +11,7 @@ The Most Advanced Telegram Group Management Bot Ever Created
 - Military-grade security
 - Zero traces left behind
 
-Developed by: @Elite_Sid | GitHub: strad-dev131
+Developed by: @TeamXUpdate | GitHub: strad-dev131
 """
 
 import asyncio
@@ -79,7 +79,7 @@ class UltraPowerfulBanBot:
                     "Use `/help` for destruction commands.\n\n"
                     "**⚡ The Most Powerful Ban Bot Ever Created!**\n"
                     "**Ready to destroy any group!**\n"
-                    "**Developed by:** [@Elite_Sid](https://t.me/Elite_Sid)"
+                    "**Developed by:** [@TeamXUpdate](https://t.me/TeamXUpdate)"
                 )
                 await message.reply_text(response)
                 logger.log_action("START_COMMAND_SUDO", message.chat.id, message.from_user.id)
@@ -98,7 +98,7 @@ class UltraPowerfulBanBot:
                     "Just chat with me normally! I love talking with everyone.\n\n"
                     "❤️ **I'm designed to bring joy to your groups!**\n"
                     "Add me to your groups for more fun!\n\n"
-                    "For support: [@Elite_Sid](https://t.me/Elite_Sid)\n\n"
+                    "For support: [@TeamsXchat](https://t.me/TeamsXchat)\n\n"
                     "**✨ Let's chat and have fun together! ✨**"
                 )
                 await message.reply_text(response)
@@ -147,7 +147,7 @@ class UltraPowerfulBanBot:
 • Admin bypass available
 
 **👨‍💻 Developed by:**
-• Telegram: [@Elite_Sid](https://t.me/Elite_Sid)
+• Telegram: [@TeamsXchat](https://t.me/TeamsXchat)
 • GitHub: [strad-dev131](https://github.com/strad-dev131)
 
 **💀 THE MOST POWERFUL DESTRUCTION BOT EVER!**
@@ -180,7 +180,7 @@ class UltraPowerfulBanBot:
 I'm designed to make your Telegram experience more enjoyable! I love chatting and helping people have fun.
 
 **📞 Support:**
-For any questions, contact: [@Elite_Sid](https://t.me/Elite_Sid)
+For any questions, contact: [@TeamsXchat](https://t.me/TeamsXchat)
 
 **✨ Let's have fun chatting together! ✨**
 """
