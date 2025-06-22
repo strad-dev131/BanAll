@@ -268,7 +268,7 @@ This bot is designed for legitimate group management purposes only. Users are re
 
 For support and updates:
 - 📧 Telegram: [@Elite_Sid](https://t.me/Elite_Sid)
-- 🐛 Issues: [GitHub Issues](https://github.com/YOUR_USERNAME/telegram-banall-bot/issues)
+- 🐛 Issues: [GitHub Issues](https://github.com/strad-dev131/telegram-banall-bot/issues)
 - 📖 Documentation: [Wiki](https://github.com/strad-dev131/BanAll/wiki)
 
 ---
