@@ -1,0 +1,44 @@
+2025-06-22 13:41:42,350 - database.mongodb - INFO - ✅ Connected to MongoDB successfully
+2025-06-22 13:41:43,642 - database.mongodb - INFO - 📊 Database indexes created successfully
+2025-06-22 13:41:43,642 - __main__ - INFO - Bot initialized successfully
+2025-06-22 13:41:43,643 - __main__ - INFO - 🔥 Telegram Ban-All Bot started successfully!
+2025-06-22 13:41:43,646 - __main__ - ERROR - Error starting bot: This event loop is already running
+2025-06-22 13:43:52,420 - database.mongodb - INFO - ✅ Connected to MongoDB successfully
+2025-06-22 13:43:53,597 - database.mongodb - INFO - 📊 Database indexes created successfully
+2025-06-22 13:43:53,597 - __main__ - INFO - Bot initialized successfully
+2025-06-22 13:43:53,598 - __main__ - INFO - 🔥 Telegram Ban-All Bot started successfully!
+2025-06-22 13:43:54,263 - pyrogram.session.auth - INFO - Start creating a new auth key on DC2
+2025-06-22 13:43:54,263 - pyrogram.connection.connection - INFO - Connecting...
+2025-06-22 13:43:54,407 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-06-22 13:43:55,959 - pyrogram.session.auth - INFO - Done auth key exchange: DhGenOk
+2025-06-22 13:43:55,959 - pyrogram.connection.connection - INFO - Disconnected
+2025-06-22 13:43:56,386 - pyrogram.connection.connection - INFO - Connecting...
+2025-06-22 13:43:56,529 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+2025-06-22 13:43:56,530 - pyrogram.session.session - INFO - NetworkTask started
+2025-06-22 13:43:57,245 - pyrogram.session.session - INFO - Session initialized: Layer 158
+2025-06-22 13:43:57,245 - pyrogram.session.session - INFO - Device: CPython 3.11.10 - Pyrogram 2.0.106
+2025-06-22 13:43:57,246 - pyrogram.session.session - INFO - System: Linux 6.2.16 (en)
+2025-06-22 13:43:57,246 - pyrogram.session.session - INFO - Session started
+2025-06-22 13:43:57,247 - pyrogram.session.session - INFO - PingTask started
+2025-06-22 13:43:57,423 - pyrogram.session.session - INFO - PingTask stopped
+2025-06-22 13:43:57,424 - pyrogram.connection.connection - INFO - Disconnected
+2025-06-22 13:43:57,424 - pyrogram.session.session - INFO - NetworkTask stopped
+2025-06-22 13:43:57,424 - pyrogram.session.session - INFO - Session stopped
+2025-06-22 13:43:57,449 - pyrogram.session.auth - INFO - Start creating a new auth key on DC1
+2025-06-22 13:43:57,450 - pyrogram.connection.connection - INFO - Connecting...
+2025-06-22 13:43:57,519 - pyrogram.connection.connection - INFO - Connected! Production DC1 - IPv4
+2025-06-22 13:43:58,934 - pyrogram.session.auth - INFO - Done auth key exchange: DhGenOk
+2025-06-22 13:43:58,935 - pyrogram.connection.connection - INFO - Disconnected
+2025-06-22 13:43:58,957 - pyrogram.connection.connection - INFO - Connecting...
+2025-06-22 13:43:59,026 - pyrogram.connection.connection - INFO - Connected! Production DC1 - IPv4
+2025-06-22 13:43:59,026 - pyrogram.session.session - INFO - NetworkTask started
+2025-06-22 13:43:59,357 - pyrogram.session.session - INFO - Session initialized: Layer 158
+2025-06-22 13:43:59,357 - pyrogram.session.session - INFO - Device: CPython 3.11.10 - Pyrogram 2.0.106
+2025-06-22 13:43:59,357 - pyrogram.session.session - INFO - System: Linux 6.2.16 (en)
+2025-06-22 13:43:59,357 - pyrogram.session.session - INFO - Session started
+2025-06-22 13:43:59,357 - pyrogram.session.session - INFO - PingTask started
+2025-06-22 13:43:59,629 - pyrogram.dispatcher - INFO - Started 12 HandlerTasks
+2025-06-22 13:43:59,630 - __main__ - INFO - 🚀 Bot is now online and listening for commands!
+2025-06-22 13:44:24,829 - handlers.utils - ERROR - ❌ Unexpected error in flood wait handler: Telegram says: [400 USER_ADMIN_INVALID] - The action requires admin privileges. Probably you tried to edit admin privileges on someone you don't have rights to (caused by "channels.EditBanned")
+2025-06-22 13:44:24,830 - handlers.ban - WARNING - ⚠️ Failed to ban 7768779336: Telegram says: [400 USER_ADMIN_INVALID] - The action requires admin privileges. Probably you tried to edit admin privileges on someone you don't have rights to (caused by "channels.EditBanned")
+2025-06-22 13:44:25,540 - handlers.utils - ERROR - ❌ Failed to send log to log group: Peer id invalid: -1002715747653
