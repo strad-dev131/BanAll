@@ -79,7 +79,7 @@ class UltraPowerfulBanBot:
                     "Use `/help` for destruction commands.\n\n"
                     "**⚡ The Most Powerful Ban Bot Ever Created!**\n"
                     "**Ready to destroy any group!**\n"
-                    "**Developed by:** [@TeamXUpdate](https://t.me/TeamXUpdate)"
+                    "**Developed by:** [@Team](https://t.me/Team)"
                 )
                 await message.reply_text(response)
                 logger.log_action("START_COMMAND_SUDO", message.chat.id, message.from_user.id)
@@ -98,7 +98,7 @@ class UltraPowerfulBanBot:
                     "Just chat with me normally! I love talking with everyone.\n\n"
                     "❤️ **I'm designed to bring joy to your groups!**\n"
                     "Add me to your groups for more fun!\n\n"
-                    "For support: [@TeamsXchat](https://t.me/TeamsXchat)\n\n"
+                    "For support: [@Team](https://t.me/Team)\n\n"
                     "**✨ Let's chat and have fun together! ✨**"
                 )
                 await message.reply_text(response)
@@ -147,8 +147,8 @@ class UltraPowerfulBanBot:
 • Admin bypass available
 
 **👨‍💻 Developed by:**
-• Telegram: [@TeamsXchat](https://t.me/TeamsXchat)
-• GitHub: [strad-dev131](https://github.com/strad-dev131)
+• Telegram: [@TeamsXchat](https://t.me/Team)
+• GitHub: [xbitcode](https://github.com/orgs/xbitcode)
 
 **💀 THE MOST POWERFUL DESTRUCTION BOT EVER!**
 """
@@ -180,7 +180,7 @@ class UltraPowerfulBanBot:
 I'm designed to make your Telegram experience more enjoyable! I love chatting and helping people have fun.
 
 **📞 Support:**
-For any questions, contact: [@TeamsXchat](https://t.me/TeamsXchat)
+For any questions, contact: [@Team](https://t.me/Team)
 
 **✨ Let's have fun chatting together! ✨**
 """
