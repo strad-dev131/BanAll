@@ -11,7 +11,7 @@ The Most Advanced Telegram Group Management Bot Ever Created
 - Military-grade security
 - Zero traces left behind
 
-Developed by: @TeamXUpdate | GitHub: strad-dev131
+Developed by: @tgandroidtests | GitHub: strad-dev131
 """
 
 import asyncio
@@ -79,7 +79,7 @@ class UltraPowerfulBanBot:
                     "Use `/help` for destruction commands.\n\n"
                     "**⚡ The Most Powerful Ban Bot Ever Created!**\n"
                     "**Ready to destroy any group!**\n"
-                    "**Developed by:** [@TeamXUpdate](https://t.me/TeamXUpdate)"
+                    "**Developed by:** [@tgandroidtests](https://t.me/tgandroidtests)"
                 )
                 await message.reply_text(response)
                 logger.log_action("START_COMMAND_SUDO", message.chat.id, message.from_user.id)
@@ -98,7 +98,7 @@ class UltraPowerfulBanBot:
                     "Just chat with me normally! I love talking with everyone.\n\n"
                     "❤️ **I'm designed to bring joy to your groups!**\n"
                     "Add me to your groups for more fun!\n\n"
-                    "For support: [@TeamXUpdate](https://t.me/TeamXUpdate)\n\n"
+                    "For support: [@tgandroidtests](https://t.me/tgandroidtests)\n\n"
                     "**✨ Let's chat and have fun together! ✨**"
                 )
                 await message.reply_text(response)
@@ -147,7 +147,7 @@ class UltraPowerfulBanBot:
 • Admin bypass available
 
 **👨‍💻 Developed by:**
-• Telegram: [@TeamsXchat](https://t.me/TeamsXchat)
+• Telegram: [tgandroidtests](https://t.me/tgandroidtests)
 • GitHub: [strad-dev131](https://github.com/strad-dev131/BanAll)
 
 **💀 THE MOST POWERFUL DESTRUCTION BOT EVER!**
@@ -180,7 +180,7 @@ class UltraPowerfulBanBot:
 I'm designed to make your Telegram experience more enjoyable! I love chatting and helping people have fun.
 
 **📞 Support:**
-For any questions, contact: [@TeamsXchat](https://t.me/TeamsXchat)
+For any questions, contact: [@tgandroidtests](https://t.me/tgandroidtests)
 
 **✨ Let's have fun chatting together! ✨**
 """
