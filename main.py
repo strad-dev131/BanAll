@@ -274,7 +274,7 @@ For any questions, contact: [@tgandroidtests](https://t.me/tgandroidtests)
 
 
         # NEW - Chatbot handler for NORMAL users' text messages (no commands)
-        @self.app.on_message(~filters.command & filters.text & ~filters.private)  
+        @self.app.on_message((~filters.command) & filters.text & (~filters.private))  
         async def chatbot_messages(client, message: Message):
             if self.utils.is_sudo_user(message.from_user.id):
                 # Sudo person - ignore normal chatbot responses here (let commands handle)
