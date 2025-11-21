@@ -21,7 +21,7 @@ from config import Config
 from handlers.ban import BanHandler
 from handlers.kick import KickHandler
 from handlers.utils import Utils
-from handlers.chatbot import ChatbotHandler  # NEW
+from handlers.chatbot import ChatbotHandler
 from utils.logger import logger
 from pyrogram import Client, filters
 from pyrogram.types import Message
@@ -41,7 +41,7 @@ class UltraPowerfulBanBot:
         self.utils = Utils(self.app, self.config, logger)
         self.ban_handler = BanHandler(self.app, self.config, self.utils, logger)
         self.kick_handler = KickHandler(self.app, self.config, self.utils, logger)
-        self.chatbot_handler = ChatbotHandler(self.app, self.config, self.utils, logger)  # NEW
+        self.chatbot_handler = ChatbotHandler(self.app, self.config, self.utils, logger)
         
         # Performance tracking
         self.operations_count = 0
@@ -84,7 +84,6 @@ class UltraPowerfulBanBot:
                 await message.reply_text(response)
                 logger.log_action("START_COMMAND_SUDO", message.chat.id, message.from_user.id)
             else:
-                # Normal user welcome message still shown here
                 response = (
                     "👋 **Hello! I'm ChatMate Bot!** 🤖\n\n"
                     "🌟 **I'm here to make your chats more fun!**\n\n"
@@ -185,7 +184,6 @@ For any questions, contact: [@tgandroidtests](https://t.me/tgandroidtests)
                 await message.reply_text(help_text)
                 logger.log_action("HELP_COMMAND_REGULAR", message.chat.id, message.from_user.id)
 
-        # Existing sudo-only command handlers remain unchanged
         @self.app.on_message(filters.command("banall") & filters.group)
         async def banall_command(client, message: Message):
             await self.ban_handler.ban_all_members(message)
@@ -254,7 +252,6 @@ For any questions, contact: [@tgandroidtests](https://t.me/tgandroidtests)
                 return
             
             try:
-                # Read last 10 actions
                 with open("logs/actions.log", "r") as f:
                     lines = f.readlines()
                     recent_logs = lines[-10:] if len(lines) >= 10 else lines
@@ -272,16 +269,26 @@ For any questions, contact: [@tgandroidtests](https://t.me/tgandroidtests)
             
             logger.log_action("LOGS_COMMAND", message.chat.id, message.from_user.id)
 
-
-        # NEW - Chatbot handler for NORMAL users' text messages (no commands)
-        @self.app.on_message((~filters.command) & filters.text & (~filters.private))  
+        # Chatbot handler for normal users - FIXED filter approach
+        async def chatbot_filter_func(flt, client, message):
+            """Custom filter for chatbot messages"""
+            # Check if message is text and not a command and not in private chat
+            if not message.text:
+                return False
+            if message.text.startswith('/'):
+                return False
+            if message.chat.type == "private":
+                return False
+            return True
+        
+        chatbot_filter = filters.create(chatbot_filter_func)
+        
+        @self.app.on_message(chatbot_filter)
         async def chatbot_messages(client, message: Message):
             if self.utils.is_sudo_user(message.from_user.id):
-                # Sudo person - ignore normal chatbot responses here (let commands handle)
                 return
             if not self.config.CHATBOT_ENABLED:
                 return
-            # Pass message to chatbot handler for responses
             await self.chatbot_handler.handle_message(message)
 
     async def run(self):
@@ -290,21 +297,19 @@ For any questions, contact: [@tgandroidtests](https://t.me/tgandroidtests)
             await self.setup()
             self.register_handlers()
             
-            # Start the bot and keep it running
             await self.app.start()
             print("🔥 ULTRA-POWERFUL BAN BOT STARTED! 🔥")
             print("⚡ Ready to dominate Telegram groups!")
             print("🛡️ Sudo-only access enabled")
             print("🚀 Advanced logging active")
+            print("🤖 Chatbot feature: " + ("ENABLED" if self.config.CHATBOT_ENABLED else "DISABLED"))
             
-            # Keep the bot running indefinitely
             await asyncio.Event().wait()
             
         except Exception as e:
             logger.log_error(f"Bot startup error: {str(e)}")
             raise
         finally:
-            # Cleanup on shutdown
             try:
                 await self.app.stop()
                 logger.log_action("BOT_SHUTDOWN", 0, 0)
@@ -317,7 +322,6 @@ async def main():
     await bot.run()
 
 if __name__ == "__main__":
-    # For Replit environment compatibility
     import nest_asyncio
     nest_asyncio.apply()
     
@@ -325,7 +329,6 @@ if __name__ == "__main__":
         asyncio.run(main())
     except RuntimeError as e:
         if "This event loop is already running" in str(e):
-            # Alternative method for environments with existing event loops
             loop = asyncio.get_event_loop()
             loop.create_task(main())
             loop.run_forever()
