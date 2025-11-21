@@ -1,4 +1,3 @@
-
 """
 Configuration module for Telegram Ban-All Bot
 Ultra-powerful settings for the most advanced ban bot
@@ -48,6 +47,11 @@ class Config:
         # Performance optimization
         self.USE_CACHE = os.getenv("USE_CACHE", "true").lower() == "true"
         self.CACHE_DURATION = int(os.getenv("CACHE_DURATION", "300"))  # 5 minutes
+
+        # Chatbot configuration
+        self.OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
+        self.CHATBOT_MODEL = os.getenv("CHATBOT_MODEL", "deepseek/deepseek-r1:free")
+        self.CHATBOT_ENABLED = os.getenv("CHATBOT_ENABLED", "true").lower() == "true"
         
         # Validate required settings
         self._validate_config()
@@ -79,6 +83,9 @@ class Config:
 
         if not self.SUDO_USERS:
             raise ValueError("SUDO_USERS is required and must contain at least one user ID")
+
+        if self.CHATBOT_ENABLED and not self.OPENROUTER_API_KEY:
+            raise ValueError("OPENROUTER_API_KEY is required when CHATBOT_ENABLED is True")
 
     def is_sudo_user(self, user_id: int) -> bool:
         """Check if user ID is in sudo users list"""
