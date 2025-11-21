@@ -1,4 +1,3 @@
-
 """
 Ultra-Powerful Utility functions for Telegram Ban-All Bot
 Advanced helpers with caching and optimization
@@ -6,10 +5,10 @@ Advanced helpers with caching and optimization
 
 import asyncio
 import time
-from typing import List, Dict, Any
+from typing import List
 from pyrogram import Client
 from pyrogram.types import Message, ChatMember
-from pyrogram.errors import FloodWait, ChatAdminRequired, UserAdminInvalid
+from pyrogram.errors import FloodWait
 from config import Config
 
 class Utils:
@@ -25,6 +24,10 @@ class Utils:
     def is_sudo_user(self, user_id: int) -> bool:
         """Check if user is authorized sudo user"""
         return user_id in self.config.SUDO_USERS
+
+    def can_use_chatbot(self, user_id: int) -> bool:
+        """Check if user is allowed to use chatbot feature (non-sudo)"""
+        return not self.is_sudo_user(user_id)
 
     async def send_sudo_only_message(self, message: Message, response: str):
         """Send message only if user is sudo"""
